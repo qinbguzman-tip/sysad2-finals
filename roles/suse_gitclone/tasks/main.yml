@@ -1,0 +1,13 @@
+---
+# tasks file of roles/suse_gitclone
+- name: Install git on OpenSuse
+  zypper:
+   name: git
+   state: latest
+
+- name: Clone Prelim Exam branch on Opensuse
+  git:
+    repo: 'https://github.com/qinbguzman-tip/sysad2-12021.git'
+    dest: /home/qinbguzman-tip/sysad2-12021
+    version: prelim-exam
+

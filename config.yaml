@@ -1,0 +1,18 @@
+username: inbguzman
+
+#FTP
+writeable_chroot: allow_writeable_chroot=YES
+
+ftp_config: "allow_writeable_chroot=YES\npasv_min_port=30000\npasv_max_port=31000\nuserlist_file=/etc/vsftpd/user_list\nuserlist_deny=NO"
+
+ftp_ubuntu: "pasv_enable=Yes\npasv_min_port=10000\npasv_max_port=10100\nallow_writeable_chroot=YES\nssl_tlsv1=YES\nssl_sslv2=NO\nssl_sslv3=NO"
+
+user: ftpuser
+
+ftp_pass: ftppass
+
+#NAGIOS
+
+naguser_pass: nagiospass
+nagadmin_pass: nagiosadmin
+

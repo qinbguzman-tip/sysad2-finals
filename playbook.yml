@@ -1,0 +1,96 @@
+---
+- name: Common package
+  hosts: all
+  gather_facts: no
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
+- name: Clone Prelim Exam on Centos
+  hosts: 
+   - centos 
+  roles:
+   - centos_gitclone
+
+- name: Install Enterprise Service on Centos
+  hosts: 
+   - centos
+  vars_files:
+   - config.yaml
+  roles:
+   - centos_ftp
+
+- name: Install Monitoring Service on Centos
+  hosts: 
+   - centos
+  vars_files:
+   - config.yaml
+  roles:
+   - centos_nagios
+
+- name: MOTD on Centos
+  hosts: 
+   - centos
+  vars_files:
+   - config.yaml
+  roles:
+   - motd
+
+- name: Prelim Exam on Ubuntu
+  hosts:
+   - ubuntu
+  roles:
+   - ubuntu_gitclone
+
+- name: Enterprise Service on Ubuntu
+  hosts:
+   - ubuntu
+  vars_files:
+   - config.yaml
+  roles:
+   - ubuntu_ftp
+
+- name: Monitoring Service on Ubuntu
+  hosts:
+   - ubuntu
+  vars_files:
+   - config.yaml
+  roles:
+   - ubuntu_nagios
+
+- name: MOTD on Ubuntu
+  hosts:
+   - ubuntu
+  vars_files:
+   - config.yaml
+  roles:
+   - motd
+
+- name: Clone Prelim Exam on OpenSUSE
+  hosts:
+   - suse
+  roles:
+   - suse_gitclone
+
+- name: Enterprise Service on OpenSUSE
+  hosts:
+   - suse
+  vars_files:
+   - config.yaml
+  roles:
+   - suse_ftp
+
+- name: Monitoring Service on OpenSUSE
+  hosts:
+   - suse
+  vars_files:
+   - config.yaml
+  roles:
+   - suse_nagios
+
+- name: MOTD on OpenSUSE
+  hosts:
+   - suse
+  vars_files:
+   - config.yaml
+  roles:
+   - motd

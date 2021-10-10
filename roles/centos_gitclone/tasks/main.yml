@@ -1,0 +1,12 @@
+---
+# task file for roles/centos_gitclone
+- name: Install git on centos
+  yum:
+   name: git
+   state: latest
+
+- name: Clone Prelim Exam branch on centos
+  git:
+    repo: 'https://github.com/qinbguzman-tip/sysad2-12021.git'
+    dest: /home/qinbguzman-tip/sysad2-12021
+    version: prelim-exam

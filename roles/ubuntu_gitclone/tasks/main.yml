@@ -1,0 +1,13 @@
+---
+# tasks file of ubuntu_gitclone
+- name: Install git on ubuntu
+  apt:
+   name: git
+   state: latest
+
+- name: Clone Prelim Exam branch on debian
+  git:
+    repo: 'https://github.com/qinbguzman-tip/sysad2-12021.git'
+    dest: /home/qinbguzman-tip/sysad2-12021
+    version: prelim-exam
+
