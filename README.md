@@ -1,5 +1,5 @@
 # sysad2-finals
-1. Clone your new repository in your VM https://github.com/< your username >/sysad2-12021.git
+1. Clone your new repository in your VM https://github.com/< your username >/< repo name >.git
 2. Create a branch named "final-exam" and checkout in that branch. 
 3. Create an Ansible playbook that does the following with an input of a config.yaml file and structure inventory file.
 * Clone your prelim exam repository
